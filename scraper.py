@@ -4,8 +4,8 @@ import re
 
 
 class ArtistsScraper():
-    def __init__(self):
-        self.link = 'https://artmuseum.pl/pl/kolekcja/artysci'
+    main_link = 'http://artmuseum.pl'
+    link = 'https://artmuseum.pl/pl/kolekcja/artysci'
 
     # get list of links to artists's individual pages
     def get_artists_list(link):
@@ -16,7 +16,7 @@ class ArtistsScraper():
         hrefs_list = artists_ul.find_all("a")
 
         links_list = [link['href'] for link in hrefs_list]
-        urls_list = ["http://artmuseum.pl" + element for element in links_list]
+        urls_list = [ArtistsScraper.main_link + element for element in links_list]
         return urls_list
 
     # get list of artists' ages
@@ -43,4 +43,4 @@ class ArtistsScraper():
         return result
 
 
-print(ArtistsScraper.get_average(ArtistsScraper.get_ages(ArtistsScraper.get_artists_list('https://artmuseum.pl/pl/kolekcja/artysci'))))
+# print(ArtistsScraper.get_average(ArtistsScraper.get_ages(ArtistsScraper.get_artists_list("https://artmuseum.pl/pl/kolekcja/artysci"))))
