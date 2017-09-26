@@ -39,12 +39,3 @@ class ArtistsScraper():
             average += age
         result = average / len(ages)
         return result
-
-
-
-# content = requests.get('https://artmuseum.pl/pl/kolekcja/artysci/miron-bialoszewski', verify=False)
-# text = content.text
-# soup = BeautifulSoup(text, 'html.parser')
-# name = str(soup('h2')[0].string)
-# birth_date = re.findall(r'\d{4}', name)
-# # print(birth_date)
