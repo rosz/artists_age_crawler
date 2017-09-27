@@ -16,7 +16,7 @@ class ArtistsScraper():
         hrefs_list = artists_ul.find_all('a')
 
         links_list = [link['href'] for link in hrefs_list]
-        urls_list = [ArtistsScraper.main_link + element for element in links_list]
+        urls_list = [self.main_link + element for element in links_list]
         return urls_list
 
     # get list of artists' ages
