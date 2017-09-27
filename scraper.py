@@ -20,8 +20,8 @@ class ArtistsScraper():
         return urls_list
 
     # get list of artists' ages
-    def get_ages(self):
-        urls_list = self.get_artists_list()
+    def get_ages(self, urls_list):
+        # urls_list = self.get_artists_list()
         ages = []
 
         for url in urls_list:
@@ -36,8 +36,8 @@ class ArtistsScraper():
         return ages
 
     # get average of ages
-    def get_average(self):
-        ages = self.get_ages()
+    def get_average(self, ages):
+        # ages = self.get_ages()
         average = 0
         for age in ages:
             average += age
